@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from typing import Optional  # optional value
 import uvicorn
@@ -34,6 +35,8 @@ async def post_item(item: Items):
     # request treatement
     return {"id": 1, "item": item.model_dump()}
 
-# Launch PORT server
+# Launch server
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    host = os.environ.get("HOST", "127.0.0.1")
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host=host, port=port)
