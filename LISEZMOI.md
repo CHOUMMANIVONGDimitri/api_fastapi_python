@@ -34,7 +34,7 @@ Une API avec python et fastAPI
 
 5. **Exécution du projet :** Utilisez la commande pour exécuter le projet (exemple avec FastAPI et Uvicorn) :
 
-   `uvicorn app:app --host 0.0.0.0 --port 8000`
+   `uvicorn app:app --reload --host $HOST --port $PORT`
 
 6. **Accéder à l'application :** Accédez à l'URL spécifiée dans Uvicorn (par défaut, http://localhost:8000) pour interagir avec l'application.
 
