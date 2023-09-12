@@ -4,7 +4,7 @@ import uvicorn
 import certifi
 from dotenv import load_dotenv
 from pymongo.mongo_client import MongoClient
-from controllers.books.index import router as book_router
+from controllers.books import router as book_router
 
 load_dotenv()
 app = FastAPI()
@@ -36,7 +36,7 @@ except Exception as e:
 
 
 @app.get("/")
-async def get_all_items():
+async def get_welcome_message():
     return "Welcome to the API"
 
 app.include_router(book_router, tags=["books"], prefix="/book")
